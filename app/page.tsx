@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { AuthProvider, useAuth } from "@/lib/auth-context"
 import { ProtectedRoute } from "@/components/auth/protected-route"
 import { DataProvider } from "@/lib/data-context"
@@ -61,12 +62,22 @@ function DashboardContent({ scrollToSection }: { scrollToSection: (id: string) =
 
   return (
     <DataProvider>
-      <div className="min-h-screen bg-[#0a1628] flex">
+      <div className="min-h-screen bg-black flex">
         {/* Navigation Panel */}
-        <nav className="w-64 bg-[#0d1b2a] border-r border-gray-800 p-6 sticky top-0 h-screen overflow-y-auto flex flex-col">
-          <div className="mb-8">
-            <h2 className="text-xl font-semibold text-white mb-2">Dashboard</h2>
-            <p className="text-gray-400 text-sm">Quick Navigation</p>
+        <nav className="w-64 bg-[#1a1a1a] border-r border-[#D4AF37]/30 p-6 sticky top-0 h-screen overflow-y-auto flex flex-col">
+          {/* Logo Section */}
+          <div className="mb-8 text-center">
+            <div className="flex justify-center mb-4">
+              <Image
+                src="/logo-letters.png"
+                alt="Cornejo Law"
+                width={80}
+                height={80}
+                className="object-contain"
+              />
+            </div>
+            <h2 className="text-lg font-semibold text-[#D4AF37] mb-1">Dashboard</h2>
+            <p className="text-gray-500 text-xs">Quick Navigation</p>
           </div>
 
           <ul className="space-y-2 flex-1">
@@ -76,9 +87,9 @@ function DashboardContent({ scrollToSection }: { scrollToSection: (id: string) =
                 <li key={item.id}>
                   <button
                     onClick={() => scrollToSection(item.id)}
-                    className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-gray-300 hover:bg-[#1a2332] hover:text-white transition-colors text-left group"
+                    className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:bg-[#D4AF37]/10 hover:text-[#D4AF37] transition-colors text-left group"
                   >
-                    <Icon className="w-4 h-4 flex-shrink-0 group-hover:text-blue-400 transition-colors" />
+                    <Icon className="w-4 h-4 flex-shrink-0 group-hover:text-[#D4AF37] transition-colors" />
                     <span className="text-sm">{item.label}</span>
                   </button>
                 </li>
@@ -87,14 +98,14 @@ function DashboardContent({ scrollToSection }: { scrollToSection: (id: string) =
           </ul>
 
           {/* User Section */}
-          <div className="mt-6 pt-6 border-t border-gray-800">
+          <div className="mt-6 pt-6 border-t border-[#D4AF37]/30">
             <div className="mb-3 px-3">
-              <p className="text-xs text-gray-500 mb-1">Signed in as</p>
-              <p className="text-sm text-gray-300 truncate">{user?.email}</p>
+              <p className="text-xs text-gray-600 mb-1">Signed in as</p>
+              <p className="text-sm text-gray-400 truncate">{user?.email}</p>
             </div>
             <button
               onClick={handleLogout}
-              className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-gray-300 hover:bg-red-500/10 hover:text-red-400 transition-colors text-left group"
+              className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:bg-red-500/10 hover:text-red-400 transition-colors text-left group"
             >
               <LogOut className="w-4 h-4 flex-shrink-0" />
               <span className="text-sm">Sign Out</span>
@@ -103,9 +114,9 @@ function DashboardContent({ scrollToSection }: { scrollToSection: (id: string) =
         </nav>
 
         {/* Main Content */}
-        <div className="flex-1 p-6 overflow-y-auto">
+        <div className="flex-1 p-6 overflow-y-auto bg-[#0a0a0a]">
           <div className="mb-6 flex items-center justify-between">
-            <h1 className="text-2xl font-semibold text-white">Law Firm Dashboard</h1>
+            <h1 className="text-2xl font-semibold text-[#D4AF37]">Law Firm Dashboard</h1>
             <DataEntryModal />
           </div>
 
