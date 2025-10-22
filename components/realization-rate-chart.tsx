@@ -30,7 +30,7 @@ export function RealizationRateChart() {
           config={{
             realization: {
               label: "Realization Rate",
-              color: "#a855f7",
+              color: "#D4AF37",
             },
             target: {
               label: "Target",
@@ -46,8 +46,8 @@ export function RealizationRateChart() {
           <AreaChart data={data}>
             <defs>
               <linearGradient id="colorRealization" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#a855f7" stopOpacity={0.8} />
-                <stop offset="95%" stopColor="#a855f7" stopOpacity={0.1} />
+                <stop offset="5%" stopColor="#D4AF37" stopOpacity={0.8} />
+                <stop offset="95%" stopColor="#D4AF37" stopOpacity={0.1} />
               </linearGradient>
             </defs>
             <CartesianGrid strokeDasharray="3 3" stroke="#2d2d2d" />
@@ -63,7 +63,7 @@ export function RealizationRateChart() {
             <Area
               type="monotone"
               dataKey="realization"
-              stroke="#a855f7"
+              stroke="#D4AF37"
               strokeWidth={2}
               fill="url(#colorRealization)"
             />
@@ -71,7 +71,7 @@ export function RealizationRateChart() {
         </ChartContainer>
         <div className="flex items-center justify-center gap-6 mt-4 text-xs">
           <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-[#a855f7]" />
+            <div className="w-3 h-3 rounded-full bg-[#D4AF37]" />
             <span className="text-gray-400">Realization Rate</span>
           </div>
           <div className="flex items-center gap-2">
