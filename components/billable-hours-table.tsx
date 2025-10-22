@@ -23,16 +23,25 @@ export function BillableHoursTable() {
     return acc
   }, {} as Record<string, number>)
 
+  // Create a map of lawyer names to their targets
+  const lawyerTargets = data.lawyers.reduce((acc, lawyer) => {
+    acc[lawyer.name] = lawyer.billableHoursTarget
+    return acc
+  }, {} as Record<string, number>)
+
   // Convert to array and sort by hours
   const lawyerData = Object.entries(lawyerHours)
-    .map(([lawyer, actual], index) => ({
-      rank: index + 1,
-      name: lawyer,
-      actual,
-      target: 200, // Default target
-      percentage: ((actual - 200) / 200) * 100,
-      trend: actual > 200 ? "up" : actual === 200 ? "neutral" : "down"
-    }))
+    .map(([lawyer, actual], index) => {
+      const target = lawyerTargets[lawyer] || 200 // Fallback to 200 if lawyer not found
+      return {
+        rank: index + 1,
+        name: lawyer,
+        actual,
+        target,
+        percentage: ((actual - target) / target) * 100,
+        trend: actual > target ? "up" : actual === target ? "neutral" : "down"
+      }
+    })
     .sort((a, b) => b.actual - a.actual)
 
   const handleEdit = (entryId: string) => {

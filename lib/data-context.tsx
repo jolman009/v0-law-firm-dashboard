@@ -42,6 +42,7 @@ export interface LawyerEntry {
   title: string
   specialization: string
   billableRate: number
+  billableHoursTarget: number
   startDate: string
   active: boolean
 }

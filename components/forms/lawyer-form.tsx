@@ -23,6 +23,7 @@ export function LawyerForm({ onClose, editLawyer }: LawyerFormProps) {
     title: editLawyer?.title || 'Associate',
     specialization: editLawyer?.specialization || '',
     billableRate: editLawyer?.billableRate || 0,
+    billableHoursTarget: editLawyer?.billableHoursTarget || 200,
     startDate: editLawyer?.startDate || new Date().toISOString().split('T')[0],
     active: editLawyer?.active ?? true
   })
@@ -33,7 +34,8 @@ export function LawyerForm({ onClose, editLawyer }: LawyerFormProps) {
     const lawyer: LawyerEntry = {
       id: editLawyer?.id || Date.now().toString(),
       ...formData,
-      billableRate: Number(formData.billableRate)
+      billableRate: Number(formData.billableRate),
+      billableHoursTarget: Number(formData.billableHoursTarget)
     }
 
     if (editLawyer) {
@@ -137,6 +139,19 @@ export function LawyerForm({ onClose, editLawyer }: LawyerFormProps) {
 
           <div className="grid grid-cols-2 gap-4">
             <div>
+              <Label htmlFor="billableHoursTarget" className="text-gray-300">Billable Hours Target (monthly)</Label>
+              <Input
+                id="billableHoursTarget"
+                type="number"
+                min="0"
+                step="1"
+                value={formData.billableHoursTarget}
+                onChange={(e) => setFormData({ ...formData, billableHoursTarget: Number(e.target.value) })}
+                className="bg-[#2d2d2d] border-[#2a3f5a] text-white"
+                required
+              />
+            </div>
+            <div>
               <Label htmlFor="startDate" className="text-gray-300">Start Date</Label>
               <Input
                 id="startDate"
@@ -147,14 +162,15 @@ export function LawyerForm({ onClose, editLawyer }: LawyerFormProps) {
                 required
               />
             </div>
-            <div className="flex items-center space-x-2 pt-6">
-              <Label htmlFor="active" className="text-gray-300">Active Status</Label>
-              <Switch
-                id="active"
-                checked={formData.active}
-                onCheckedChange={(checked) => setFormData({ ...formData, active: checked })}
-              />
-            </div>
+          </div>
+
+          <div className="flex items-center space-x-2">
+            <Label htmlFor="active" className="text-gray-300">Active Status</Label>
+            <Switch
+              id="active"
+              checked={formData.active}
+              onCheckedChange={(checked) => setFormData({ ...formData, active: checked })}
+            />
           </div>
 
           <div className="flex gap-2 pt-4">
