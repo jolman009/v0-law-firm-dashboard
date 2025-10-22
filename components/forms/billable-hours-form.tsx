@@ -55,13 +55,18 @@ export function BillableHoursForm({ onClose, editEntry }: BillableHoursFormProps
           <div className="grid grid-cols-2 gap-4">
             <div>
               <Label htmlFor="lawyer" className="text-gray-300">Lawyer</Label>
-              <Input
-                id="lawyer"
-                value={formData.lawyer}
-                onChange={(e) => setFormData({ ...formData, lawyer: e.target.value })}
-                className="bg-[#2d2d2d] border-[#2a3f5a] text-white"
-                required
-              />
+              <Select value={formData.lawyer} onValueChange={(value) => setFormData({ ...formData, lawyer: value })}>
+                <SelectTrigger className="bg-[#2d2d2d] border-[#2a3f5a] text-white">
+                  <SelectValue placeholder="Select lawyer" />
+                </SelectTrigger>
+                <SelectContent>
+                  {data.lawyers.filter(lawyer => lawyer.active).map((lawyer) => (
+                    <SelectItem key={lawyer.id} value={lawyer.name}>
+                      {lawyer.name}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
             <div>
               <Label htmlFor="date" className="text-gray-300">Date</Label>
@@ -109,13 +114,18 @@ export function BillableHoursForm({ onClose, editEntry }: BillableHoursFormProps
 
           <div>
             <Label htmlFor="matter" className="text-gray-300">Matter</Label>
-            <Input
-              id="matter"
-              value={formData.matter}
-              onChange={(e) => setFormData({ ...formData, matter: e.target.value })}
-              className="bg-[#2d2d2d] border-[#2a3f5a] text-white"
-              required
-            />
+            <Select value={formData.matter} onValueChange={(value) => setFormData({ ...formData, matter: value })}>
+              <SelectTrigger className="bg-[#2d2d2d] border-[#2a3f5a] text-white">
+                <SelectValue placeholder="Select matter" />
+              </SelectTrigger>
+              <SelectContent>
+                {data.matters.filter(matter => matter.status === 'active').map((matter) => (
+                  <SelectItem key={matter.id} value={matter.title}>
+                    {matter.title}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
           </div>
 
           <div>
