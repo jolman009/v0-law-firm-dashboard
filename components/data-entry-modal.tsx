@@ -20,7 +20,7 @@ export function DataEntryModal() {
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
-        <Button className="bg-blue-600 hover:bg-blue-700">
+        <Button className="bg-gradient-to-r from-gray-800 to-gray-700 hover:from-[#D4AF37] hover:to-[#B8941F] border border-gray-600 hover:border-[#D4AF37] transition-all duration-300 hover:shadow-lg hover:shadow-[#D4AF37]/20">
           <Plus className="w-4 h-4 mr-2" />
           Add Data
         </Button>

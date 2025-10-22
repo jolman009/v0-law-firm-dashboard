@@ -124,7 +124,7 @@ export function ClientForm({ onClose, editClient }: ClientFormProps) {
           </div>
 
           <div className="flex gap-2 pt-4">
-            <Button type="submit" className="bg-blue-600 hover:bg-blue-700">
+            <Button type="submit" className="bg-gradient-to-r from-gray-800 to-gray-700 hover:from-[#D4AF37] hover:to-[#B8941F] border border-gray-600 hover:border-[#D4AF37] transition-all duration-300 hover:shadow-lg hover:shadow-[#D4AF37]/20">
               {editClient ? 'Update' : 'Add'} Client
             </Button>
             <Button type="button" variant="outline" onClick={onClose} className="border-[#2a3f5a] text-gray-300">
