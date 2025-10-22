@@ -45,7 +45,7 @@ export function LawyerList() {
               <DialogTrigger asChild>
                 <Button
                   size="sm"
-                  className="bg-gradient-to-r from-gray-800 to-gray-700 hover:from-[#D4AF37] hover:to-[#B8941F] border border-gray-600 hover:border-[#D4AF37] transition-all duration-300 hover:shadow-lg hover:shadow-[#D4AF37]/20"
+                  className="bg-gradient-to-br from-gray-200 via-gray-100 to-gray-200 hover:from-[#D4AF37] hover:to-[#B8941F] border border-gray-300 hover:border-[#D4AF37] transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#D4AF37]/30 text-gray-800 hover:text-black"
                   onClick={() => setEditingLawyer(null)}
                 >
                   <Plus className="w-4 h-4 mr-1" />
@@ -112,7 +112,7 @@ export function LawyerList() {
                           </div>
                         </div>
 
-                        <div className="grid grid-cols-2 gap-2 mt-3 ml-13">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-3 ml-13">
                           <div className="flex items-center gap-2 text-sm text-gray-300">
                             <Mail className="w-3 h-3 text-gray-400" />
                             <span className="truncate">{lawyer.email}</span>
@@ -123,7 +123,7 @@ export function LawyerList() {
                           </div>
                         </div>
 
-                        <div className="flex gap-4 mt-3 ml-13">
+                        <div className="flex flex-wrap gap-4 mt-3 ml-13">
                           <div className="text-sm flex items-center gap-1">
                             <Briefcase className="w-3 h-3 text-gray-400" />
                             <span className="text-gray-400">Specialization: </span>
@@ -149,16 +149,18 @@ export function LawyerList() {
                           variant="ghost"
                           onClick={() => handleEdit(lawyer.id)}
                           className="hover:bg-[#2a3f5a]"
+                          aria-label={`Edit ${lawyer.name}`}
                         >
-                          <Edit className="w-4 h-4 text-[#D4AF37] hover:text-[#B8941F] transition-colors" />
+                          <Edit className="w-4 h-4 text-[#D4AF37] hover:text-[#B8941F] transition-colors" aria-hidden="true" />
                         </Button>
                         <Button
                           size="sm"
                           variant="ghost"
                           onClick={() => handleDelete(lawyer.id)}
                           className="hover:bg-[#2a3f5a]"
+                          aria-label={`Delete ${lawyer.name}`}
                         >
-                          <Trash2 className="w-4 h-4 text-red-400" />
+                          <Trash2 className="w-4 h-4 text-red-400" aria-hidden="true" />
                         </Button>
                       </div>
                     </div>

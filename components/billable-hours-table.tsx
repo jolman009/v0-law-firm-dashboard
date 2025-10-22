@@ -65,7 +65,7 @@ export function BillableHoursTable() {
             </div>
             <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
               <DialogTrigger asChild>
-                <Button size="sm" className="bg-gradient-to-r from-gray-800 to-gray-700 hover:from-[#D4AF37] hover:to-[#B8941F] border border-gray-600 hover:border-[#D4AF37] transition-all duration-300 hover:shadow-lg hover:shadow-[#D4AF37]/20">
+                <Button size="sm" className="bg-gradient-to-br from-gray-200 via-gray-100 to-gray-200 hover:from-[#D4AF37] hover:to-[#B8941F] border border-gray-300 hover:border-[#D4AF37] transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#D4AF37]/30 text-gray-800 hover:text-black">
                   <Plus className="w-4 h-4 mr-1" />
                   Add Hours
                 </Button>
@@ -92,15 +92,16 @@ export function BillableHoursTable() {
           </div>
         </CardHeader>
         <CardContent>
-          <div className="space-y-3">
-            <div className="grid grid-cols-6 gap-4 text-xs text-gray-400 pb-2 border-b border-[#2d2d2d]">
-              <div></div>
-              <div className="text-right">Actual</div>
-              <div className="text-right">Target</div>
-              <div className="text-right">Target %</div>
-              <div className="text-right">Trend</div>
-              <div className="text-right">Actions</div>
-            </div>
+          <div className="overflow-x-auto">
+            <div className="space-y-3 min-w-[600px]">
+              <div className="grid grid-cols-6 gap-4 text-xs text-gray-400 pb-2 border-b border-[#2d2d2d]">
+                <div></div>
+                <div className="text-right">Actual</div>
+                <div className="text-right">Target</div>
+                <div className="text-right">Target %</div>
+                <div className="text-right">Trend</div>
+                <div className="text-right">Actions</div>
+              </div>
             {lawyerData.length > 0 ? (
               lawyerData.map((item) => (
                 <div key={item.rank} className="grid grid-cols-6 gap-4 items-center text-sm">
@@ -120,14 +121,14 @@ export function BillableHoursTable() {
                     </span>
                   </div>
                   <div className="flex justify-end">
-                    {item.percentage > 0 && <TrendingUp className="w-4 h-4 text-green-500" />}
+                    {item.percentage > 0 && <TrendingUp className="w-4 h-4 text-green-500" aria-label="Above target" role="img" />}
                   </div>
                   <div className="flex justify-end gap-1">
-                    <Button size="sm" variant="ghost" onClick={() => handleEdit(item.name)}>
-                      <Edit className="w-3 h-3" />
+                    <Button size="sm" variant="ghost" onClick={() => handleEdit(item.name)} aria-label={`Edit billable hours for ${item.name}`}>
+                      <Edit className="w-3 h-3" aria-hidden="true" />
                     </Button>
-                    <Button size="sm" variant="ghost" onClick={() => handleDelete(item.name)}>
-                      <Trash2 className="w-3 h-3" />
+                    <Button size="sm" variant="ghost" onClick={() => handleDelete(item.name)} aria-label={`Delete billable hours for ${item.name}`}>
+                      <Trash2 className="w-3 h-3" aria-hidden="true" />
                     </Button>
                   </div>
                 </div>
@@ -137,6 +138,7 @@ export function BillableHoursTable() {
                 No billable hours data yet. Click "Add Hours" to get started.
               </div>
             )}
+            </div>
           </div>
         </CardContent>
       </Card>

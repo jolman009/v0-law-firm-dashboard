@@ -42,6 +42,8 @@ export function RealizationRateChart() {
             },
           }}
           className="h-[200px]"
+          role="img"
+          aria-label="Realization rate chart showing monthly performance from January to July 2023. Values range from 75% to 98%, with most months exceeding the 90% target."
         >
           <AreaChart data={data}>
             <defs>

@@ -65,6 +65,7 @@ export function LawyerForm({ onClose, editLawyer }: LawyerFormProps) {
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 className="bg-[#2d2d2d] border-[#2a3f5a] text-white"
                 required
+                aria-required="true"
               />
             </div>
             <div>
@@ -96,16 +97,19 @@ export function LawyerForm({ onClose, editLawyer }: LawyerFormProps) {
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 className="bg-[#2d2d2d] border-[#2a3f5a] text-white"
                 required
+                aria-required="true"
               />
             </div>
             <div>
               <Label htmlFor="phone" className="text-gray-300">Phone</Label>
               <Input
                 id="phone"
+                type="tel"
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 className="bg-[#2d2d2d] border-[#2a3f5a] text-white"
                 required
+                aria-required="true"
               />
             </div>
           </div>
@@ -120,6 +124,7 @@ export function LawyerForm({ onClose, editLawyer }: LawyerFormProps) {
                 className="bg-[#2d2d2d] border-[#2a3f5a] text-white"
                 placeholder="e.g., Corporate Law, Litigation"
                 required
+                aria-required="true"
               />
             </div>
             <div>
@@ -133,6 +138,7 @@ export function LawyerForm({ onClose, editLawyer }: LawyerFormProps) {
                 onChange={(e) => setFormData({ ...formData, billableRate: Number(e.target.value) })}
                 className="bg-[#2d2d2d] border-[#2a3f5a] text-white"
                 required
+                aria-required="true"
               />
             </div>
           </div>
@@ -149,6 +155,7 @@ export function LawyerForm({ onClose, editLawyer }: LawyerFormProps) {
                 onChange={(e) => setFormData({ ...formData, billableHoursTarget: Number(e.target.value) })}
                 className="bg-[#2d2d2d] border-[#2a3f5a] text-white"
                 required
+                aria-required="true"
               />
             </div>
             <div>
@@ -160,6 +167,7 @@ export function LawyerForm({ onClose, editLawyer }: LawyerFormProps) {
                 onChange={(e) => setFormData({ ...formData, startDate: e.target.value })}
                 className="bg-[#2d2d2d] border-[#2a3f5a] text-white"
                 required
+                aria-required="true"
               />
             </div>
           </div>
@@ -174,7 +182,7 @@ export function LawyerForm({ onClose, editLawyer }: LawyerFormProps) {
           </div>
 
           <div className="flex gap-2 pt-4">
-            <Button type="submit" className="bg-gradient-to-r from-gray-800 to-gray-700 hover:from-[#D4AF37] hover:to-[#B8941F] border border-gray-600 hover:border-[#D4AF37] transition-all duration-300 hover:shadow-lg hover:shadow-[#D4AF37]/20">
+            <Button type="submit" className="bg-gradient-to-br from-gray-200 via-gray-100 to-gray-200 hover:from-[#D4AF37] hover:to-[#B8941F] border border-gray-300 hover:border-[#D4AF37] transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#D4AF37]/30 text-gray-800 hover:text-black">
               {editLawyer ? 'Update' : 'Add'} Lawyer
             </Button>
             <Button type="button" variant="outline" onClick={onClose} className="border-[#2a3f5a] text-gray-300">

@@ -36,6 +36,8 @@ export function ClientAcquisitionChart() {
             },
           }}
           className="h-[200px]"
+          role="img"
+          aria-label="Line chart showing average client acquisition cost from January to September 2023. Costs range from $1,500 to $2,400, with fluctuations throughout the period."
         >
           <LineChart data={data}>
             <CartesianGrid strokeDasharray="3 3" stroke="#2d2d2d" />

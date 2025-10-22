@@ -166,12 +166,63 @@ const DataContext = createContext<{
   data: DashboardData
   dispatch: React.Dispatch<DataAction>
   loading: boolean
+  announcement: string
 } | null>(null)
 
 // Provider component
 export function DataProvider({ children }: { children: React.ReactNode }) {
   const [data, dispatch] = useReducer(dataReducer, initialState)
   const [loading, setLoading] = useState(true)
+  const [announcement, setAnnouncement] = useState('')
+
+  // Enhanced dispatch with announcements
+  const dispatchWithAnnouncement = (action: DataAction) => {
+    dispatch(action)
+
+    // Create screen reader announcements for data changes
+    let message = ''
+    switch (action.type) {
+      case 'ADD_LAWYER':
+        message = `Lawyer ${action.payload.name} has been added`
+        break
+      case 'ADD_CLIENT':
+        message = `Client ${action.payload.name} has been added`
+        break
+      case 'ADD_MATTER':
+        message = `Matter ${action.payload.title} has been added`
+        break
+      case 'ADD_BILLABLE_HOURS':
+        message = `Billable hours entry for ${action.payload.lawyer} has been added`
+        break
+      case 'UPDATE_LAWYER':
+        message = `Lawyer ${action.payload.name} has been updated`
+        break
+      case 'UPDATE_CLIENT':
+        message = `Client ${action.payload.name} has been updated`
+        break
+      case 'UPDATE_MATTER':
+        message = `Matter ${action.payload.title} has been updated`
+        break
+      case 'DELETE_LAWYER':
+        message = `Lawyer has been deleted`
+        break
+      case 'DELETE_CLIENT':
+        message = `Client has been deleted`
+        break
+      case 'DELETE_MATTER':
+        message = `Matter has been deleted`
+        break
+      case 'DELETE_BILLABLE_HOURS':
+        message = `Billable hours entry has been deleted`
+        break
+    }
+
+    if (message) {
+      setAnnouncement(message)
+      // Clear announcement after screen readers have had time to announce it
+      setTimeout(() => setAnnouncement(''), 3000)
+    }
+  }
 
   // Load data from localStorage on mount
   useEffect(() => {
@@ -195,8 +246,17 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
   }, [data, loading])
 
   return (
-    <DataContext.Provider value={{ data, dispatch, loading }}>
+    <DataContext.Provider value={{ data, dispatch: dispatchWithAnnouncement, loading, announcement }}>
       {children}
+      {/* Screen reader announcement region */}
+      <div
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+        className="sr-only"
+      >
+        {announcement}
+      </div>
     </DataContext.Provider>
   )
 }

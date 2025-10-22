@@ -37,7 +37,7 @@ export function LoginForm({ onSwitchToSignup }: LoginFormProps) {
         <p className="text-gray-400 text-sm">Sign in to your dashboard</p>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-4" aria-busy={loading}>
         <div className="space-y-2">
           <Label htmlFor="email" className="text-[#D4AF37]">
             Email
@@ -49,6 +49,10 @@ export function LoginForm({ onSwitchToSignup }: LoginFormProps) {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            aria-required="true"
+            aria-invalid={error ? "true" : "false"}
+            aria-describedby={error ? "login-error" : undefined}
+            disabled={loading}
             className="bg-black border-[#D4AF37]/30 text-white placeholder:text-gray-500 focus:border-[#D4AF37] focus:ring-[#D4AF37]"
           />
         </div>
@@ -64,12 +68,16 @@ export function LoginForm({ onSwitchToSignup }: LoginFormProps) {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
+            aria-required="true"
+            aria-invalid={error ? "true" : "false"}
+            aria-describedby={error ? "login-error" : undefined}
+            disabled={loading}
             className="bg-black border-[#D4AF37]/30 text-white placeholder:text-gray-500 focus:border-[#D4AF37] focus:ring-[#D4AF37]"
           />
         </div>
 
         {error && (
-          <div className="p-3 rounded-md bg-red-500/10 border border-red-500/30">
+          <div id="login-error" role="alert" className="p-3 rounded-md bg-red-500/10 border border-red-500/30">
             <p className="text-sm text-red-400">{error}</p>
           </div>
         )}
@@ -78,10 +86,16 @@ export function LoginForm({ onSwitchToSignup }: LoginFormProps) {
           type="submit"
           disabled={loading}
           className="w-full bg-[#D4AF37] hover:bg-[#B8941F] text-black font-semibold transition-colors"
+          aria-busy={loading}
         >
           {loading ? 'Signing in...' : 'Sign In'}
         </Button>
       </form>
+
+      {/* Screen reader loading announcement */}
+      <div role="status" aria-live="polite" aria-atomic="true" className="sr-only">
+        {loading && 'Signing in, please wait...'}
+      </div>
 
       <div className="mt-6 text-center">
         <p className="text-gray-400 text-sm">

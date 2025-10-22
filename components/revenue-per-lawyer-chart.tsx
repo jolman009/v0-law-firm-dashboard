@@ -36,6 +36,8 @@ export function RevenuePerLawyerChart() {
             },
           }}
           className="h-[200px]"
+          role="img"
+          aria-label="Bar chart showing average revenue per lawyer from January to September 2023. Values range from $17,000 to $23,000, with an average around $20,000 per month."
         >
           <BarChart data={data}>
             <CartesianGrid strokeDasharray="3 3" stroke="#2d2d2d" />
