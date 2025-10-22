@@ -1,12 +1,14 @@
 # Netlify configuration for Next.js deployment
 
 [build]
-  command = "npm run build"
+  command = "npm install --legacy-peer-deps && npm run build"
   publish = ".next"
 
 [build.environment]
   NODE_VERSION = "18"
   NPM_FLAGS = "--legacy-peer-deps"
+  # Force npm instead of pnpm/yarn
+  NPM_USE_PRODUCTION = "false"
 
 # Use Next.js plugin for proper deployment
 [[plugins]]
