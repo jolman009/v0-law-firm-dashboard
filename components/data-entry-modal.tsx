@@ -25,19 +25,19 @@ export function DataEntryModal() {
           Add Data
         </Button>
       </DialogTrigger>
-      <DialogContent className="max-w-3xl bg-[#0d1b2a] border-[#1a2f4a] text-white max-h-[90vh] overflow-y-auto">
+      <DialogContent className="max-w-3xl bg-[#0d0d0d] border-[#2d2d2d] text-white max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="text-white text-2xl">Add New Data</DialogTitle>
         </DialogHeader>
 
         {/* Tab Navigation */}
-        <div className="flex gap-2 border-b border-[#1a2f4a] pb-2">
+        <div className="flex gap-2 border-b border-[#2d2d2d] pb-2">
           <button
             onClick={() => setActiveTab('lawyers')}
             className={`px-4 py-2 rounded-t-lg text-sm font-medium transition-colors ${
               activeTab === 'lawyers'
-                ? 'bg-[#1a2f4a] text-white'
-                : 'text-gray-400 hover:text-white hover:bg-[#0f1f3a]'
+                ? 'bg-[#2d2d2d] text-white'
+                : 'text-gray-400 hover:text-white hover:bg-[#1a1a1a]'
             }`}
           >
             Lawyers
@@ -46,8 +46,8 @@ export function DataEntryModal() {
             onClick={() => setActiveTab('billable-hours')}
             className={`px-4 py-2 rounded-t-lg text-sm font-medium transition-colors ${
               activeTab === 'billable-hours'
-                ? 'bg-[#1a2f4a] text-white'
-                : 'text-gray-400 hover:text-white hover:bg-[#0f1f3a]'
+                ? 'bg-[#2d2d2d] text-white'
+                : 'text-gray-400 hover:text-white hover:bg-[#1a1a1a]'
             }`}
           >
             Billable Hours
@@ -56,8 +56,8 @@ export function DataEntryModal() {
             onClick={() => setActiveTab('clients')}
             className={`px-4 py-2 rounded-t-lg text-sm font-medium transition-colors ${
               activeTab === 'clients'
-                ? 'bg-[#1a2f4a] text-white'
-                : 'text-gray-400 hover:text-white hover:bg-[#0f1f3a]'
+                ? 'bg-[#2d2d2d] text-white'
+                : 'text-gray-400 hover:text-white hover:bg-[#1a1a1a]'
             }`}
           >
             Clients
@@ -66,8 +66,8 @@ export function DataEntryModal() {
             onClick={() => setActiveTab('matters')}
             className={`px-4 py-2 rounded-t-lg text-sm font-medium transition-colors ${
               activeTab === 'matters'
-                ? 'bg-[#1a2f4a] text-white'
-                : 'text-gray-400 hover:text-white hover:bg-[#0f1f3a]'
+                ? 'bg-[#2d2d2d] text-white'
+                : 'text-gray-400 hover:text-white hover:bg-[#1a1a1a]'
             }`}
           >
             Matters

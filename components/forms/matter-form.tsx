@@ -44,7 +44,7 @@ export function MatterForm({ onClose, editMatter }: MatterFormProps) {
   }
 
   return (
-    <Card className="bg-[#0f1f3a] border-[#1a2f4a]">
+    <Card className="bg-[#1a1a1a] border-[#2d2d2d]">
       <CardHeader>
         <CardTitle className="text-white">
           {editMatter ? 'Edit Matter' : 'Add New Matter'}
@@ -55,7 +55,7 @@ export function MatterForm({ onClose, editMatter }: MatterFormProps) {
           <div>
             <Label htmlFor="clientId" className="text-gray-300">Client</Label>
             <Select value={formData.clientId} onValueChange={(value) => setFormData({ ...formData, clientId: value })}>
-              <SelectTrigger className="bg-[#1a2f4a] border-[#2a3f5a] text-white">
+              <SelectTrigger className="bg-[#2d2d2d] border-[#2a3f5a] text-white">
                 <SelectValue placeholder="Select client" />
               </SelectTrigger>
               <SelectContent>
@@ -74,7 +74,7 @@ export function MatterForm({ onClose, editMatter }: MatterFormProps) {
               id="title"
               value={formData.title}
               onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-              className="bg-[#1a2f4a] border-[#2a3f5a] text-white"
+              className="bg-[#2d2d2d] border-[#2a3f5a] text-white"
               required
             />
           </div>
@@ -89,14 +89,14 @@ export function MatterForm({ onClose, editMatter }: MatterFormProps) {
                 step="0.01"
                 value={formData.value}
                 onChange={(e) => setFormData({ ...formData, value: Number(e.target.value) })}
-                className="bg-[#1a2f4a] border-[#2a3f5a] text-white"
+                className="bg-[#2d2d2d] border-[#2a3f5a] text-white"
                 required
               />
             </div>
             <div>
               <Label htmlFor="status" className="text-gray-300">Status</Label>
               <Select value={formData.status} onValueChange={(value: 'active' | 'completed' | 'on-hold') => setFormData({ ...formData, status: value })}>
-                <SelectTrigger className="bg-[#1a2f4a] border-[#2a3f5a] text-white">
+                <SelectTrigger className="bg-[#2d2d2d] border-[#2a3f5a] text-white">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -116,7 +116,7 @@ export function MatterForm({ onClose, editMatter }: MatterFormProps) {
                 type="date"
                 value={formData.startDate}
                 onChange={(e) => setFormData({ ...formData, startDate: e.target.value })}
-                className="bg-[#1a2f4a] border-[#2a3f5a] text-white"
+                className="bg-[#2d2d2d] border-[#2a3f5a] text-white"
                 required
               />
             </div>
@@ -128,7 +128,7 @@ export function MatterForm({ onClose, editMatter }: MatterFormProps) {
                   type="date"
                   value={formData.endDate}
                   onChange={(e) => setFormData({ ...formData, endDate: e.target.value })}
-                  className="bg-[#1a2f4a] border-[#2a3f5a] text-white"
+                  className="bg-[#2d2d2d] border-[#2a3f5a] text-white"
                 />
               </div>
             )}

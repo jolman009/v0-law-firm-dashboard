@@ -18,7 +18,7 @@ const data = [
 
 export function ClientAcquisitionChart() {
   return (
-    <Card className="bg-[#0f1f3a] border-[#1a2f4a]">
+    <Card className="bg-[#1a1a1a] border-[#2d2d2d]">
       <CardHeader>
         <div className="flex items-center justify-between">
           <div>
@@ -38,7 +38,7 @@ export function ClientAcquisitionChart() {
           className="h-[200px]"
         >
           <LineChart data={data}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#1a2f4a" />
+            <CartesianGrid strokeDasharray="3 3" stroke="#2d2d2d" />
             <XAxis dataKey="month" stroke="#6b7280" tick={{ fill: "#9ca3af", fontSize: 12 }} />
             <YAxis
               stroke="#6b7280"

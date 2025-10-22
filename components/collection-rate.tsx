@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export function CollectionRate() {
   return (
-    <Card className="bg-[#0f1f3a] border-[#1a2f4a]">
+    <Card className="bg-[#1a1a1a] border-[#2d2d2d]">
       <CardHeader>
         <div className="flex items-center justify-between">
           <div>
@@ -24,7 +24,7 @@ export function CollectionRate() {
             <path
               d="M 20 80 A 80 80 0 0 1 180 80"
               fill="none"
-              stroke="#1a2f4a"
+              stroke="#2d2d2d"
               strokeWidth="20"
               strokeLinecap="round"
             />

@@ -47,7 +47,7 @@ export function BillableHoursTable() {
   }
   return (
     <>
-      <Card className="bg-[#0f1f3a] border-[#1a2f4a]">
+      <Card className="bg-[#1a1a1a] border-[#2d2d2d]">
         <CardHeader>
           <div className="flex items-center justify-between">
             <div>
@@ -61,7 +61,7 @@ export function BillableHoursTable() {
                   Add Hours
                 </Button>
               </DialogTrigger>
-              <DialogContent className="max-w-2xl bg-[#0f1f3a] border-[#1a2f4a] text-white">
+              <DialogContent className="max-w-2xl bg-[#1a1a1a] border-[#2d2d2d] text-white">
                 <DialogHeader>
                   <DialogTitle className="text-white">
                     {editingEntry ? 'Edit Billable Hours' : 'Add Billable Hours'}
@@ -84,7 +84,7 @@ export function BillableHoursTable() {
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
-            <div className="grid grid-cols-6 gap-4 text-xs text-gray-400 pb-2 border-b border-[#1a2f4a]">
+            <div className="grid grid-cols-6 gap-4 text-xs text-gray-400 pb-2 border-b border-[#2d2d2d]">
               <div></div>
               <div className="text-right">Actual</div>
               <div className="text-right">Target</div>

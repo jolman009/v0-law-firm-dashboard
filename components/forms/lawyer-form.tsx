@@ -46,7 +46,7 @@ export function LawyerForm({ onClose, editLawyer }: LawyerFormProps) {
   }
 
   return (
-    <Card className="bg-[#0f1f3a] border-[#1a2f4a]">
+    <Card className="bg-[#1a1a1a] border-[#2d2d2d]">
       <CardHeader>
         <CardTitle className="text-white">
           {editLawyer ? 'Edit Lawyer' : 'Add New Lawyer'}
@@ -61,14 +61,14 @@ export function LawyerForm({ onClose, editLawyer }: LawyerFormProps) {
                 id="name"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="bg-[#1a2f4a] border-[#2a3f5a] text-white"
+                className="bg-[#2d2d2d] border-[#2a3f5a] text-white"
                 required
               />
             </div>
             <div>
               <Label htmlFor="title" className="text-gray-300">Title/Position</Label>
               <Select value={formData.title} onValueChange={(value) => setFormData({ ...formData, title: value })}>
-                <SelectTrigger className="bg-[#1a2f4a] border-[#2a3f5a] text-white">
+                <SelectTrigger className="bg-[#2d2d2d] border-[#2a3f5a] text-white">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -92,7 +92,7 @@ export function LawyerForm({ onClose, editLawyer }: LawyerFormProps) {
                 type="email"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="bg-[#1a2f4a] border-[#2a3f5a] text-white"
+                className="bg-[#2d2d2d] border-[#2a3f5a] text-white"
                 required
               />
             </div>
@@ -102,7 +102,7 @@ export function LawyerForm({ onClose, editLawyer }: LawyerFormProps) {
                 id="phone"
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                className="bg-[#1a2f4a] border-[#2a3f5a] text-white"
+                className="bg-[#2d2d2d] border-[#2a3f5a] text-white"
                 required
               />
             </div>
@@ -115,7 +115,7 @@ export function LawyerForm({ onClose, editLawyer }: LawyerFormProps) {
                 id="specialization"
                 value={formData.specialization}
                 onChange={(e) => setFormData({ ...formData, specialization: e.target.value })}
-                className="bg-[#1a2f4a] border-[#2a3f5a] text-white"
+                className="bg-[#2d2d2d] border-[#2a3f5a] text-white"
                 placeholder="e.g., Corporate Law, Litigation"
                 required
               />
@@ -129,7 +129,7 @@ export function LawyerForm({ onClose, editLawyer }: LawyerFormProps) {
                 step="0.01"
                 value={formData.billableRate}
                 onChange={(e) => setFormData({ ...formData, billableRate: Number(e.target.value) })}
-                className="bg-[#1a2f4a] border-[#2a3f5a] text-white"
+                className="bg-[#2d2d2d] border-[#2a3f5a] text-white"
                 required
               />
             </div>
@@ -143,7 +143,7 @@ export function LawyerForm({ onClose, editLawyer }: LawyerFormProps) {
                 type="date"
                 value={formData.startDate}
                 onChange={(e) => setFormData({ ...formData, startDate: e.target.value })}
-                className="bg-[#1a2f4a] border-[#2a3f5a] text-white"
+                className="bg-[#2d2d2d] border-[#2a3f5a] text-white"
                 required
               />
             </div>

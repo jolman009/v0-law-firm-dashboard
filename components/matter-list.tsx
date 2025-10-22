@@ -63,7 +63,7 @@ export function MatterList() {
 
   return (
     <>
-      <Card className="bg-[#0f1f3a] border-[#1a2f4a]">
+      <Card className="bg-[#1a1a1a] border-[#2d2d2d]">
         <CardHeader>
           <div className="flex items-center justify-between">
             <div>
@@ -81,7 +81,7 @@ export function MatterList() {
                   Add Matter
                 </Button>
               </DialogTrigger>
-              <DialogContent className="max-w-2xl bg-[#0f1f3a] border-[#1a2f4a] text-white">
+              <DialogContent className="max-w-2xl bg-[#1a1a1a] border-[#2d2d2d] text-white">
                 <DialogHeader>
                   <DialogTitle className="text-white">
                     {editingMatter ? 'Edit Matter' : 'Add New Matter'}
@@ -113,7 +113,7 @@ export function MatterList() {
                 {data.matters.map((matter) => (
                   <div
                     key={matter.id}
-                    className="bg-[#1a2f4a] rounded-lg p-4 hover:bg-[#1e3550] transition-colors"
+                    className="bg-[#2d2d2d] rounded-lg p-4 hover:bg-[#1e3550] transition-colors"
                   >
                     <div className="flex items-start justify-between">
                       <div className="flex-1">

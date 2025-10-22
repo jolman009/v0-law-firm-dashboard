@@ -43,7 +43,7 @@ export function ClientForm({ onClose, editClient }: ClientFormProps) {
   }
 
   return (
-    <Card className="bg-[#0f1f3a] border-[#1a2f4a]">
+    <Card className="bg-[#1a1a1a] border-[#2d2d2d]">
       <CardHeader>
         <CardTitle className="text-white">
           {editClient ? 'Edit Client' : 'Add New Client'}
@@ -58,7 +58,7 @@ export function ClientForm({ onClose, editClient }: ClientFormProps) {
                 id="name"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="bg-[#1a2f4a] border-[#2a3f5a] text-white"
+                className="bg-[#2d2d2d] border-[#2a3f5a] text-white"
                 required
               />
             </div>
@@ -69,7 +69,7 @@ export function ClientForm({ onClose, editClient }: ClientFormProps) {
                 type="email"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="bg-[#1a2f4a] border-[#2a3f5a] text-white"
+                className="bg-[#2d2d2d] border-[#2a3f5a] text-white"
                 required
               />
             </div>
@@ -82,7 +82,7 @@ export function ClientForm({ onClose, editClient }: ClientFormProps) {
                 id="phone"
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                className="bg-[#1a2f4a] border-[#2a3f5a] text-white"
+                className="bg-[#2d2d2d] border-[#2a3f5a] text-white"
                 required
               />
             </div>
@@ -93,7 +93,7 @@ export function ClientForm({ onClose, editClient }: ClientFormProps) {
                 type="date"
                 value={formData.acquisitionDate}
                 onChange={(e) => setFormData({ ...formData, acquisitionDate: e.target.value })}
-                className="bg-[#1a2f4a] border-[#2a3f5a] text-white"
+                className="bg-[#2d2d2d] border-[#2a3f5a] text-white"
                 required
               />
             </div>
@@ -109,7 +109,7 @@ export function ClientForm({ onClose, editClient }: ClientFormProps) {
                 max="10"
                 value={formData.satisfaction}
                 onChange={(e) => setFormData({ ...formData, satisfaction: Number(e.target.value) })}
-                className="bg-[#1a2f4a] border-[#2a3f5a] text-white"
+                className="bg-[#2d2d2d] border-[#2a3f5a] text-white"
                 required
               />
             </div>

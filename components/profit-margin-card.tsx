@@ -5,7 +5,7 @@ import { TrendingDown } from "lucide-react"
 
 export function ProfitMarginCard() {
   return (
-    <Card className="bg-[#0f1f3a] border-[#1a2f4a]">
+    <Card className="bg-[#1a1a1a] border-[#2d2d2d]">
       <CardHeader>
         <div className="flex items-center justify-between">
           <div>
@@ -23,7 +23,7 @@ export function ProfitMarginCard() {
           <div className="flex items-baseline gap-2 mb-2">
             <span className="text-3xl font-bold text-[#06b6d4]">10.50%</span>
           </div>
-          <div className="h-2 bg-[#1a2f4a] rounded-full overflow-hidden">
+          <div className="h-2 bg-[#2d2d2d] rounded-full overflow-hidden">
             <div className="h-full bg-[#06b6d4]" style={{ width: "10.5%" }} />
           </div>
         </div>
@@ -33,7 +33,7 @@ export function ProfitMarginCard() {
             <span className="text-sm text-gray-400">Target</span>
             <span className="text-sm text-white">10.00%</span>
           </div>
-          <div className="h-2 bg-[#1a2f4a] rounded-full overflow-hidden">
+          <div className="h-2 bg-[#2d2d2d] rounded-full overflow-hidden">
             <div className="h-full bg-[#84cc16]" style={{ width: "10%" }} />
           </div>
         </div>
@@ -43,7 +43,7 @@ export function ProfitMarginCard() {
             <span className="text-sm text-gray-400">Compare to</span>
             <span className="text-sm text-white">11.00%</span>
           </div>
-          <div className="h-2 bg-[#1a2f4a] rounded-full overflow-hidden">
+          <div className="h-2 bg-[#2d2d2d] rounded-full overflow-hidden">
             <div className="h-full bg-[#84cc16]" style={{ width: "11%" }} />
           </div>
         </div>
@@ -53,7 +53,7 @@ export function ProfitMarginCard() {
             <span className="text-sm text-gray-400">Target</span>
             <span className="text-sm text-white">10.00%</span>
           </div>
-          <div className="h-2 bg-[#1a2f4a] rounded-full overflow-hidden">
+          <div className="h-2 bg-[#2d2d2d] rounded-full overflow-hidden">
             <div className="h-full bg-[#84cc16]" style={{ width: "10%" }} />
           </div>
         </div>

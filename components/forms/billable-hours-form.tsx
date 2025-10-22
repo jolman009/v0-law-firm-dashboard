@@ -44,7 +44,7 @@ export function BillableHoursForm({ onClose, editEntry }: BillableHoursFormProps
   }
 
   return (
-    <Card className="bg-[#0f1f3a] border-[#1a2f4a]">
+    <Card className="bg-[#1a1a1a] border-[#2d2d2d]">
       <CardHeader>
         <CardTitle className="text-white">
           {editEntry ? 'Edit Billable Hours' : 'Add Billable Hours'}
@@ -59,7 +59,7 @@ export function BillableHoursForm({ onClose, editEntry }: BillableHoursFormProps
                 id="lawyer"
                 value={formData.lawyer}
                 onChange={(e) => setFormData({ ...formData, lawyer: e.target.value })}
-                className="bg-[#1a2f4a] border-[#2a3f5a] text-white"
+                className="bg-[#2d2d2d] border-[#2a3f5a] text-white"
                 required
               />
             </div>
@@ -70,7 +70,7 @@ export function BillableHoursForm({ onClose, editEntry }: BillableHoursFormProps
                 type="date"
                 value={formData.date}
                 onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                className="bg-[#1a2f4a] border-[#2a3f5a] text-white"
+                className="bg-[#2d2d2d] border-[#2a3f5a] text-white"
                 required
               />
             </div>
@@ -86,14 +86,14 @@ export function BillableHoursForm({ onClose, editEntry }: BillableHoursFormProps
                 min="0"
                 value={formData.hours}
                 onChange={(e) => setFormData({ ...formData, hours: Number(e.target.value) })}
-                className="bg-[#1a2f4a] border-[#2a3f5a] text-white"
+                className="bg-[#2d2d2d] border-[#2a3f5a] text-white"
                 required
               />
             </div>
             <div>
               <Label htmlFor="client" className="text-gray-300">Client</Label>
               <Select value={formData.client} onValueChange={(value) => setFormData({ ...formData, client: value })}>
-                <SelectTrigger className="bg-[#1a2f4a] border-[#2a3f5a] text-white">
+                <SelectTrigger className="bg-[#2d2d2d] border-[#2a3f5a] text-white">
                   <SelectValue placeholder="Select client" />
                 </SelectTrigger>
                 <SelectContent>
@@ -113,7 +113,7 @@ export function BillableHoursForm({ onClose, editEntry }: BillableHoursFormProps
               id="matter"
               value={formData.matter}
               onChange={(e) => setFormData({ ...formData, matter: e.target.value })}
-              className="bg-[#1a2f4a] border-[#2a3f5a] text-white"
+              className="bg-[#2d2d2d] border-[#2a3f5a] text-white"
               required
             />
           </div>
@@ -124,7 +124,7 @@ export function BillableHoursForm({ onClose, editEntry }: BillableHoursFormProps
               id="description"
               value={formData.description}
               onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-              className="bg-[#1a2f4a] border-[#2a3f5a] text-white"
+              className="bg-[#2d2d2d] border-[#2a3f5a] text-white"
               rows={3}
             />
           </div>
